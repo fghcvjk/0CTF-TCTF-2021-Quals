@@ -1,0 +1,8 @@
+.login-page {
+  background-image: url(/assets/img/bg.jpg);
+  background-size: 100% 100%;
+}
+
+.login-logo a {
+  color: white;
+}

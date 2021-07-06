@@ -1,0 +1,7 @@
+nc 111.186.58.164 30212
+
+nc 13.213.48.68 30212
+
+root@ubuntu:/home/ctf/web/dirsearch# nc 111.186.58.164 30212
+sha256(XXXX+6K7wpwh7bZZcEh1Z) == ffb5c5079b8d033d3ba0684084791f6c107c9bef851da0b54b94988677f89990
+Give me XXXX:

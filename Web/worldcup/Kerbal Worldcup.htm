@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Kerbal Worldcup</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Kerbal%20Worldcup_files/adminlte.css">
+  <link rel="stylesheet" href="Kerbal%20Worldcup_files/fontawesome-all.css">
+  <link rel="stylesheet" href="Kerbal%20Worldcup_files/Source-Sans-Pro.css">
+  <link rel="stylesheet" href="Kerbal%20Worldcup_files/toastr.css">
+  <link rel="stylesheet" href="Kerbal%20Worldcup_files/common.css">
+  <script nonce="" src="Kerbal%20Worldcup_files/jquery.js"></script>
+  <script nonce="" src="Kerbal%20Worldcup_files/bootstrap.js"></script>
+  <script nonce="" src="Kerbal%20Worldcup_files/adminlte.js"></script>
+  <script nonce="" src="Kerbal%20Worldcup_files/toastr.js"></script>
+  <script nonce="" src="Kerbal%20Worldcup_files/common.js"></script>
+</head>
+
+<body class="login-page" style="min-height: 294.8px;">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="http://111.186.58.135:19260/"><b>Kerbal Worldcup</b></a>
+    </div>
+
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Kerbal first online worldcup casinos!</p>
+
+        <form id="signinForm" action="/api/signin" method="post" class="form-horizontal">
+          <div class="input-group mb-3">
+            <input name="username" type="text" class="form-control" placeholder="Username" maxlength="32" required="">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input name="password" type="password" class="form-control" placeholder="Password" required="">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <a class="btn" href="http://111.186.58.135:19260/signup">Sign Up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script nonce="">
+    "use strict"
+
+    $("#signinForm").submit((e) => {
+      e.preventDefault();
+      let form = document.getElementById("signinForm");
+      let d = {};
+      new FormData(form).forEach((value, key) => (d[key] = value));
+      JSONAction("POST", form.attributes["action"].value, d).done(function (d) {
+        if (d.code != 0)
+          toastr.error(d.msg);
+        else
+          toastr.success(d.msg, "", {
+            timeOut: 500, onHidden: () => {
+              window.location.href = "/dashboard";
+            }
+          });
+      })
+    });
+  </script>
+
+
+</body></html>

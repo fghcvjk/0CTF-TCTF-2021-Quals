@@ -1,0 +1,22 @@
+I want a 100 percent efficient gas machine
+
+nc 111.186.58.164 13377
+
+root@ubuntu:/home/ctf/web/dirsearch# nc 111.186.58.164 13377
+[+] sha256(RuIyENYJ+?).binary.endswith('00000000000000000000')
+[-] ?=lPqh
+[+] passed
+
+Help us design a 100% efficient gas machine in evm!
+
+1. Read rules
+2. Depoly and test
+
+[-] input your choice: 1
+
+[+] You need to implement a smart contract as the gas machine, and send us its RUNTIME bytecode.
+    We will check it for 1000 times.
+    Each time we call the machine with no input data and a random amount of gas between [21100, 99999]. All gas should be used, while the tx must not fail.
+
+[+] Limit: Forbidden opcodes: [240, 241, 242, 244, 245, 250, 255]; Max length: 100
+[+] Note: Istanbul

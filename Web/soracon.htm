@@ -1,0 +1,24 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>highlight_file</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$host&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'host'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #DD0000">'127.0.0.1'</span><span style="color: #007700">;<br></span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'hostname'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'port'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">8983</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'path'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'/solr'</span><span style="color: #007700">];<br></span><span style="color: #0000BB">$client&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SolrClient</span><span style="color: #007700">(</span><span style="color: #0000BB">$options</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SolrQuery</span><span style="color: #007700">();<br></span><span style="color: #0000BB">$query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setQuery</span><span style="color: #007700">(</span><span style="color: #DD0000">'lucene'</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$query_response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br></span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$query_response</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getResponse</span><span style="color: #007700">();<br></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$response</span><span style="color: #007700">);<br></span><span style="color: #FF8000">//&nbsp;Dont&nbsp;scan,&nbsp;only&nbsp;index.php&nbsp;&amp;&nbsp;phpinfo.php&nbsp;available<br></span>
+</span>
+</code>SolrObject Object
+(
+    [response] =&gt; SolrObject Object
+        (
+            [numFound] =&gt; 1
+            [start] =&gt; 0
+            [docs] =&gt; Array
+                (
+                    [0] =&gt; SolrObject Object
+                        (
+                            [a] =&gt; 123456
+                            [b] =&gt; 12345678
+                        )
+
+                )
+
+        )
+
+)
+</body></html>

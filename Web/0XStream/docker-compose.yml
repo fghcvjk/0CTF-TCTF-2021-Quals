@@ -1,0 +1,7 @@
+version: '2'
+services:
+  web:
+    build: ./
+    ports:
+      - "0.0.0.0:50180:8090"
+    restart: always
